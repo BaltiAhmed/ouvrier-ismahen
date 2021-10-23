@@ -17,11 +17,15 @@ const Pointage = (props) => {
         type: "accee",
         date:
           date.getDate().toString() +
+          "/" +
           date.getMonth().toString() +
+          "/" +
           date.getFullYear().toString(),
         heure:
           date.getHours().toString() +
+          ":" +
           date.getMinutes().toString() +
+          ":" +
           date.getSeconds().toString(),
       }),
     });
@@ -49,11 +53,15 @@ const Pointage = (props) => {
         type: "sortie",
         date:
           date.getDate().toString() +
+          "/" +
           date.getMonth().toString() +
+          "/" +
           date.getFullYear().toString(),
         heure:
           date.getHours().toString() +
+          ":" +
           date.getMinutes().toString() +
+          ":" +
           date.getSeconds().toString(),
       }),
     });
