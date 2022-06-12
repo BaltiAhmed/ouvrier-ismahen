@@ -3,11 +3,13 @@ import { createAppContainer } from "react-navigation";
 import { createStackNavigator } from "react-navigation-stack";
 import { createMaterialBottomTabNavigator } from "react-navigation-material-bottom-tabs";
 import IconAntDesign from "react-native-vector-icons/AntDesign";
+import IconFontisto from "react-native-vector-icons/Fontisto";
 import Fontisto from "react-native-vector-icons/Fontisto";
 import Entypo from "react-native-vector-icons/Entypo";
 import Pointage from "../screens/pointage";
 import Produit from "../screens/produit";
 import ListeCommande from "../screens/liste-commande";
+import Profile from "../screens/profiles";
 
 const LandingNav = createStackNavigator(
   {
@@ -51,6 +53,20 @@ const CommandeNav = createStackNavigator(
   }
 );
 
+const ProfileNav = createStackNavigator(
+  {
+    Profile: Profile,
+  },
+  {
+    defaultNavigationOptions: {
+      headerStyle: {
+        backgroundColor: "#0d47a1",
+      },
+      headerTintColor: "white",
+    },
+  }
+);
+
 const AppNav = createMaterialBottomTabNavigator(
   {
     Home: {
@@ -79,6 +95,15 @@ const AppNav = createMaterialBottomTabNavigator(
           return <Fontisto name="date" size={25} color="#fafafa" />;
         },
         tabBarColor: "#673ab7",
+      },
+    },
+    Profile: {
+      screen: ProfileNav,
+      navigationOptions: {
+        tabBarIcon: (tabInfo) => {
+          return <IconFontisto name="person" size={25} color="#fafafa" />;
+        },
+        tabBarColor: "#0086c3",
       },
     },
   },
